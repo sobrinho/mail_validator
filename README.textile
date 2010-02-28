@@ -1,0 +1,23 @@
+h1. ValidatesAsMail
+
+This gem is based on *gbdev* works in "http://github.com/gbdev/validates_as_email":http://github.com/gbdev/validates_as_email
+
+h2. Installation
+
+You can install as gem:
+
+<pre>gem "validates_as_mail"</pre>
+
+Or as plugin:
+
+<pre>$ rails plugin install git://github.com/sobrinho/validates_as_mail.git</pre>
+
+h2. Usage
+
+<pre>class Person < ActiveRecord::Base
+  validates :email, :mail => true
+end</pre>
+
+h2. License
+
+Copyright (c) 2010 Gabriel Sobrinho, released under the MIT license
