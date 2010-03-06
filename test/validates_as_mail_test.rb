@@ -6,9 +6,9 @@ class ValidatesAsMailTest < ActiveSupport::TestCase
   end
   
   test "blank values" do
-    assert_equal false, Person.new(:email => '').valid?
-    assert_equal false, Person.new(:email => false).valid?
-    assert_equal false, Person.new(:email => nil).valid?
+    ['', false, nil].each do |mail|
+      assert Person.new(:email => mail).invalid?
+    end
   end
   
   test "illegal addresses" do
