@@ -5,12 +5,16 @@ class MailValidatorTest < Test::Unit::TestCase
     assert_invalid 'Max@Job 3:14'
     assert_invalid 'Job@Book of Job'
     assert_invalid "J. P. 's-Gravezande, a.k.a. The Hacker!@example.com"
+    assert_invalid 'john.@mail.com'
+    assert_invalid 'john..doe@mail.com'
+    assert_invalid 'john.doe@mail..com'
   end
 
   def test_legal_addresses
     assert_valid 'test@example.com'
     assert_valid 'test@example.co.uk'
     assert_valid 'someone@123.com'
+    assert_valid 'john.doe@email.com'
   end
 
   protected
