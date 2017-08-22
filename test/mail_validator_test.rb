@@ -8,6 +8,8 @@ class MailValidatorTest < Test::Unit::TestCase
     assert_invalid 'john.@mail.com'
     assert_invalid 'john..doe@mail.com'
     assert_invalid 'john.doe@mail..com'
+    assert_invalid 'john,@mail.com'
+    assert_invalid 'john,doe@mail.com'
   end
 
   def test_legal_addresses
@@ -15,6 +17,7 @@ class MailValidatorTest < Test::Unit::TestCase
     assert_valid 'test@example.co.uk'
     assert_valid 'someone@123.com'
     assert_valid 'john.doe@email.com'
+    assert_valid 'john-doe@email.com'
   end
 
   protected
